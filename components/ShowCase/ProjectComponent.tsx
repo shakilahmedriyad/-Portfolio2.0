@@ -49,12 +49,12 @@ export default function ProjectComponent({
       }}
       transition={{ duration: 0.5 }}
       className={classNames(
-        "flex bg-[#1A1A1A] shadow-2xl   px-10 py-9 rounded-lg flex-col gap-y-3 md:gap-y-0  mt-11",
+        "flex bg-[#1A1A1A] shadow-2xl  px-2 sm:px-10 py-9 rounded-lg flex-col gap-y-3 md:gap-y-0  mt-11",
         !reverse ? "md:flex-row" : "md:flex-row-reverse"
       )}
     >
       <div className=" relative flex group justify-center items-center sm:w-[24rem] h-60 ">
-        <div className=" hidden text-white brightness-150 animate-pulse   group-hover:flex absolute z-50   gap-x-3">
+        <div className=" hidden text-white brightness-150 animate-pulse   group-hover:flex absolute z-50   sm:gap-x-3">
           <Link
             href={demoUrl}
             target="_blank"

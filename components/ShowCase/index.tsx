@@ -16,7 +16,7 @@ export default function ShowCase() {
     <div
       ref={ref}
       id="work"
-      className="mx-[16%] scroll-m-16  mt-16 flex justify-center flex-col items-center"
+      className="sm:mx-[16%] mx-2 scroll-m-16  flex justify-center flex-col items-center"
     >
       <p className="text-xl font-raleway sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold mt-12 mb-12">
         Projects I worked on
@@ -50,7 +50,4 @@ export default function ShowCase() {
       />
     </div>
   );
-}
-function setActive(arg0: string) {
-  throw new Error("Function not implemented.");
 }
