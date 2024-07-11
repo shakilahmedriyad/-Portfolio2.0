@@ -1,8 +1,17 @@
+"use client";
 import { DiGithubBadge } from "react-icons/di";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
+import {
+  motion,
+  useAnimation,
+  useAnimationControls,
+  useInView,
+} from "framer-motion";
+import { useEffect, useRef } from "react";
+
 type obj = {
   image: string;
   technology: string;
@@ -21,8 +30,24 @@ export default function ProjectComponent({
   demoUrl,
   reverse,
 }: obj) {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <div
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial={{ y: 200, scale: 0.5, opacity: 0 }}
+      variants={{
+        visible: { y: 0, scale: 1, opacity: 1 },
+      }}
+      transition={{ duration: 0.5 }}
       className={classNames(
         "flex bg-[#1A1A1A] shadow-2xl   px-10 py-9 rounded-lg flex-col gap-y-3 md:gap-y-0  mt-11",
         !reverse ? "md:flex-row" : "md:flex-row-reverse"
@@ -48,6 +73,7 @@ export default function ProjectComponent({
             <p>Source code</p>
           </Link>
         </div>
+
         <Image
           src={image}
           className="w-96 rounded-lg transition group-hover:brightness-50  group-hover:blur-sm group-hover:scale-105 h-60 object-cover "
@@ -58,7 +84,7 @@ export default function ProjectComponent({
       </div>
 
       <div className="text-gray-200 mx-7 my-3 text-sm w-72 ">
-        <p className="text-2xl font-medium">{title}</p>
+        <p className="text-2xl font-raleway font-semibold">{title}</p>
         <p className="mt-4">{description}</p>
         <p className="uppercase text-gray-400 mt-7">Technologies used</p>
         <p className="mt-2 text-gray-300">{technology}</p>
@@ -82,6 +108,6 @@ export default function ProjectComponent({
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

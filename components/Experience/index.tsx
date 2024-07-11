@@ -61,14 +61,14 @@ export const TimeLineElement = ({
 export default function Experience() {
   return (
     <section className="mx-auto text-ce text-white  my-24 flex-col items-center">
-      <p className="text-xl text-center sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-medium  mb-16">
+      <p className="text-xl text-center sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-raleway font-bold  mb-16">
         Experience I have
       </p>
 
       <VerticalTimeline>
         <TimeLineElement date="2023-2024" icon={<ImbueIcon />}>
           <div className="text-sm">
-            <h1 className="vertical-timeline-element-title text-xl font-medium">
+            <h1 className="vertical-timeline-element-title text-xl font-raleway font-bold">
               Frontend Web Developer
             </h1>
             <p className="mb-2">Imbue Network · Full-time</p>
@@ -93,7 +93,7 @@ export default function Experience() {
         </TimeLineElement>
         <TimeLineElement date="2023-present" icon={<UpworkIcon />}>
           <div className="text-sm">
-            <h1 className="vertical-timeline-element-title text-xl font-medium">
+            <h1 className="vertical-timeline-element-title text-xl font-raleway font-bold">
               Frontend Web Developer
             </h1>
             <p className="mb-2">Imbue Network · Full-time</p>
@@ -118,7 +118,7 @@ export default function Experience() {
         </TimeLineElement>
         <TimeLineElement date="2023-present" icon={<FiverrIcon />}>
           <div className="text-sm">
-            <h1 className="vertical-timeline-element-title text-xl font-medium">
+            <h1 className="vertical-timeline-element-title text-xl font-raleway font-bold">
               Frontend Web Developer
             </h1>
             <p className="mb-2">Imbue Network · Full-time</p>

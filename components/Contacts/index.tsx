@@ -2,7 +2,6 @@
 import { Button, TextInput, Textarea } from "evergreen-ui";
 import { useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import { json } from "stream/consumers";
 
 export default function Contacts() {
   const nameRef = useRef<HTMLInputElement | undefined>();
@@ -49,7 +48,7 @@ export default function Contacts() {
       <div className=" w-[80%] sm:w-[60%] md:w-[46rem] md:bg-[#1A1A1A]  md:px-24 md:shadow-xl py-16 rounded-xl text-sm ">
         <div className="space-y-2">
           <p>Interested in a collabaration?</p>
-          <p className="text-4xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-medium mt-7">
+          <p className="text-4xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-raleway font-semibold mt-7">
             Contact Me
           </p>
         </div>

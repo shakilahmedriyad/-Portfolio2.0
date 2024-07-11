@@ -2,7 +2,7 @@ import ProjectComponent from "./ProjectComponent";
 export default function ShowCase() {
   return (
     <div className="mx-[16%]  mt-16 flex justify-center flex-col items-center">
-      <p className="text-xl sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-medium mt-12 mb-12">
+      <p className="text-xl font-raleway sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold mt-12 mb-12">
         Projects I worked on
       </p>
       <ProjectComponent

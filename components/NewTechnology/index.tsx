@@ -21,12 +21,12 @@ export default function NewTechNology() {
   ];
   return (
     <div className="text-white text-center flex flex-col justify-center items-center bg-[#1A1A1A] shadow-2xl py-14 mt-10 sm:mt-24">
-      <p className=" text-xl sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-medium ">
+      <p className=" text-xl sm:text-3xl font-raleway font-bold bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500  ">
         Technologies I work with
       </p>
       <div className="flex  gap-x-14 mt-12 flex-wrap w-auto mx-[3%] md:w-[43rem] justify-center gap-y-5">
-        {techs.map((item) => (
-          <TechnologyBox key={item.label} {...item} />
+        {techs.map((item, index) => (
+          <TechnologyBox val={index / 10} key={item.label} {...item} />
         ))}
       </div>
     </div>
