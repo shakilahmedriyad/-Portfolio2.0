@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Raleway, Roboto } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import ActiveStatusContext from "@/lib/ActiveStatusContext";
 
 const inter = Roboto({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${raleway.variable} font-roboto`}>
         <Toaster position="top-right" reverseOrder={false} />
-        {children}
+        <ActiveStatusContext>{children}</ActiveStatusContext>
       </body>
     </html>
   );

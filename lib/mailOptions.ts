@@ -14,3 +14,5 @@ export const mailOptions = {
   from: email,
   to: process.env.NEXT_PUBLIC_TO,
 };
+
+

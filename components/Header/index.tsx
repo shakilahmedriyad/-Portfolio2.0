@@ -1,18 +1,33 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { CiLinkedin } from "react-icons/ci";
 import { DiGithubBadge } from "react-icons/di";
-import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useActiveHooks } from "@/hooks/useActiveHooks";
+import { useEffect } from "react";
 export default function Header() {
-  const copiyHandler = () => toast.success("email copied");
+  const { ref, inView } = useInView({ threshold: 0.3 });
+  const { setActive } = useActiveHooks();
+
+  useEffect(() => {
+    if (inView) {
+      setActive("Home");
+    }
+  }, [inView, setActive]);
+
   return (
-    <motion.div className="text-white pt-[35%] md:pt-[14%] pb-44 flex flex-col items-center">
+    <motion.div
+      ref={ref}
+      id="home"
+      className="text-white px-3 pt-[35%] md:pt-[14%] pb-44 flex flex-col items-center"
+    >
       <motion.div
-        initial={{ y: "-200px", opacity: 0 }}
+        initial={{ y: 0, opacity: 0 }}
         animate={{
-          y: "0px",
+          y: 0,
           opacity: 1,
         }}
         transition={{ duration: 0.5 }}

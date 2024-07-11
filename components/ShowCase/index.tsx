@@ -1,7 +1,23 @@
+"use client";
+import { useEffect } from "react";
 import ProjectComponent from "./ProjectComponent";
+import { useActiveHooks } from "@/hooks/useActiveHooks";
+import { useInView } from "react-intersection-observer";
 export default function ShowCase() {
+  const [ref, inView] = useInView({ threshold: 0.4 });
+  const { setActive } = useActiveHooks();
+  useEffect(() => {
+    if (inView) {
+      setActive("Work");
+    }
+  }, [inView, setActive]);
+
   return (
-    <div className="mx-[16%]  mt-16 flex justify-center flex-col items-center">
+    <div
+      ref={ref}
+      id="work"
+      className="mx-[16%] scroll-m-16  mt-16 flex justify-center flex-col items-center"
+    >
       <p className="text-xl font-raleway sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold mt-12 mb-12">
         Projects I worked on
       </p>
@@ -34,4 +50,7 @@ export default function ShowCase() {
       />
     </div>
   );
+}
+function setActive(arg0: string) {
+  throw new Error("Function not implemented.");
 }

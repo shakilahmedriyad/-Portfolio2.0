@@ -1,9 +1,19 @@
 "use client";
+import { useActiveHooks } from "@/hooks/useActiveHooks";
 import { Button, TextInput, Textarea } from "evergreen-ui";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { useInView } from "react-intersection-observer";
 
 export default function Contacts() {
+  const [ref, inView] = useInView({ threshold: 0.4 });
+  const { setActive } = useActiveHooks();
+  useEffect(() => {
+    if (inView) {
+      setActive("Contact");
+    }
+  }, [inView, setActive]);
+
   const nameRef = useRef<HTMLInputElement | undefined>();
   const emailRef = useRef<HTMLInputElement | undefined>();
   const messageRef = useRef<HTMLInputElement | undefined>();
@@ -41,8 +51,13 @@ export default function Contacts() {
       toast.error("please fill all the field properly");
     }
   };
+
   return (
-    <div className=" w-full py-7 mt-28 mb-10 text-gray-100 flex flex-col justify-center items-center  ">
+    <div
+      ref={ref}
+      id="contact"
+      className=" w-full py-7 mt-28 mb-10 text-gray-100 flex flex-col justify-center items-center  "
+    >
       <Toaster position="top-right" />
 
       <div className=" w-[80%] sm:w-[60%] md:w-[46rem] md:bg-[#1A1A1A]  md:px-24 md:shadow-xl py-16 rounded-xl text-sm ">

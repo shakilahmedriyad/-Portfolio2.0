@@ -25,9 +25,9 @@ export default function TestimonialsCard({
   return (
     <motion.div
       ref={ref}
-      initial={{ y: 200, scale: 0.5, opacity: 0 }}
+      initial={{ y: 100, scale: 0.5, opacity: 0 }}
       animate={controls}
-      transition={{ duration: 0.5, delay: del }}
+      transition={{ duration: 0.3, delay: del }}
       variants={{
         visible: { y: 0, opacity: 1, scale: 1 },
       }}

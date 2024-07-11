@@ -1,14 +1,14 @@
 "use client";
+
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Image from "next/image";
-import { FaUpwork } from "react-icons/fa6";
 import { useInView } from "react-intersection-observer";
-import { ReactElement } from "react";
-import { TbBrandFiverr } from "react-icons/tb";
+import { ReactElement, useEffect } from "react";
+import { useActiveHooks } from "@/hooks/useActiveHooks";
 
 export const ImbueIcon = () => (
   <Image
@@ -35,6 +35,7 @@ export const TimeLineElement = ({
   icon: ReactElement;
 }>) => {
   const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
     <div ref={ref} className="vertical-timeline-element">
       <VerticalTimelineElement
@@ -59,12 +60,24 @@ export const TimeLineElement = ({
 };
 
 export default function Experience() {
+  const { setActive } = useActiveHooks();
+  const { ref, inView } = useInView({ threshold: 0.3 });
+
+  useEffect(() => {
+    if (inView) {
+      setActive("Experience");
+    }
+  }, [inView, setActive]);
+
   return (
-    <section className="mx-auto text-ce text-white  my-24 flex-col items-center">
-      <p className="text-xl text-center sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-raleway font-bold  mb-16">
+    <section
+      ref={ref}
+      id="experience"
+      className="mx-auto scroll-m-28 text-ce text-white  my-24 flex-col items-center"
+    >
+      <p className="text-xl text-center sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-raleway font-bold  mb-32">
         Experience I have
       </p>
-
       <VerticalTimeline>
         <TimeLineElement date="2023-2024" icon={<ImbueIcon />}>
           <div className="text-sm">

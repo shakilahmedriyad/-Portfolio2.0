@@ -1,12 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+"use client";
+import { useInView } from "react-intersection-observer";
 import TestimonialsCard from "./TestimonialsCard";
+import { useActiveHooks } from "@/hooks/useActiveHooks";
+import { useEffect } from "react";
 
 const reviews = [
   {
@@ -55,8 +51,16 @@ const reviews = [
 ];
 
 export default function Testimonials() {
+  const [ref, inView] = useInView({ threshold: 0.4 });
+  const { setActive } = useActiveHooks();
+  useEffect(() => {
+    if (inView) {
+      setActive("Testimonials");
+    }
+  }, [inView, setActive]);
+
   return (
-    <section className="mx-5">
+    <section ref={ref} id="testimonials" className="mx-5">
       <h3 className=" text-center font-raleway py-20 text-xl sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold ">
         Testimonials I Get
       </h3>
