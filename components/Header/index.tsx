@@ -65,9 +65,16 @@ export default function Header() {
           I am a Full-Stack Developer specializing in React and Next.js
         </p>
         <div className="flex text-xs sm:text-sm gap-x-4 mt-6">
-          <button className="flex gap-x-1 border cursor-pointer border-gray-400 rounded-full px-4 font-semibold py-1.5  justify-center items-center">
-            Download CV
-          </button>
+          <Link
+            target="_blank"
+            href={
+              "https://drive.google.com/file/d/1BZskG_TUvzuHd5tFw1bHT6fKDrushHPA/view?usp=drive_link"
+            }
+          >
+            <button className="flex gap-x-1 border cursor-pointer border-gray-400 rounded-full px-4 font-semibold py-1.5  justify-center items-center">
+              Download CV
+            </button>
+          </Link>
           <Link
             className="flex gap-x-1 cursor-pointer items-center"
             href={"https://www.linkedin.com/in/shakilahmedriyad/"}
@@ -76,7 +83,7 @@ export default function Header() {
             <CiLinkedin size={25} />
           </Link>
           <Link
-            href={"https://github.com/Riyad139"}
+            href={"https://github.com/shakilahmedriyad"}
             target="_blank"
             className="flex gap-x-1 cursor-pointer items-center"
           >

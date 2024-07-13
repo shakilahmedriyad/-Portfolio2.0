@@ -4,12 +4,7 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
-import {
-  motion,
-  useAnimation,
-  useAnimationControls,
-  useInView,
-} from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 type obj = {

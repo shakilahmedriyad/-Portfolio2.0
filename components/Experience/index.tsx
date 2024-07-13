@@ -87,19 +87,20 @@ export default function Experience() {
             <p className="mb-2">Imbue Network · Full-time</p>
             <ul className="px-4">
               <li className="list-disc">
-                development of critical components, ensuring seamless
-                integration with third-party services
+                Developed client and freelancer dashboards for streamlined
+                interaction and management
               </li>
               <li className="list-disc">
-                Implemented robust unit testing protocols across key application
-                areas
+                mplemented a robust messaging system with GetStream, ensuring
+                offline users receive email notifications.
               </li>
               <li className="list-disc">
-                Revamped a partially legacy codebase, improving maintainability
+                Enhanced user engagement with automated notifications for job
+                applications, closures, and cancellations
               </li>
               <li className="list-disc">
-                Led the design and execution of end-to-end features,
-                guaranteeing optimal functionality
+                Worked with partially legacy codebase and significantly improved
+                web page speed.
               </li>
             </ul>
           </div>
@@ -107,24 +108,20 @@ export default function Experience() {
         <TimeLineElement date="2023-present" icon={<UpworkIcon />}>
           <div className="text-sm">
             <h1 className="vertical-timeline-element-title text-xl font-raleway font-bold">
-              Frontend Web Developer
+              Full-Stack Web Developer
             </h1>
-            <p className="mb-2">Imbue Network · Full-time</p>
+            <p className="mb-2">Upwork · Full-time (freelance)</p>
             <ul className="px-4">
               <li className="list-disc">
-                development of critical components, ensuring seamless
-                integration with third-party services
+                Make Minimum Viable Product (MVP) applications.
               </li>
               <li className="list-disc">
-                Implemented robust unit testing protocols across key application
-                areas
+                Build real-time applications such as messaging.
               </li>
+              <li className="list-disc">Landing & Marketing Pages.</li>
+              <li className="list-disc">Work on Performance / SEO.</li>
               <li className="list-disc">
-                Revamped a partially legacy codebase, improving maintainability
-              </li>
-              <li className="list-disc">
-                Led the design and execution of end-to-end features,
-                guaranteeing optimal functionality
+                Improve code and fix breaking issues.
               </li>
             </ul>
           </div>
@@ -132,24 +129,26 @@ export default function Experience() {
         <TimeLineElement date="2023-present" icon={<FiverrIcon />}>
           <div className="text-sm">
             <h1 className="vertical-timeline-element-title text-xl font-raleway font-bold">
-              Frontend Web Developer
+              Full-stack Web Developer
             </h1>
-            <p className="mb-2">Imbue Network · Full-time</p>
+            <p className="mb-2">Fiverr · Full-time </p>
             <ul className="px-4">
               <li className="list-disc">
-                development of critical components, ensuring seamless
-                integration with third-party services
+                Addressed CORS issues affecting OpenAI API integration, ensuring
+                seamless functionality.
               </li>
               <li className="list-disc">
-                Implemented robust unit testing protocols across key application
-                areas
+                Significantly improved web page performance from a Lighthouse
+                score of around 30 to 95 through restructuring & various
+                lazy-loading techniques.
               </li>
               <li className="list-disc">
-                Revamped a partially legacy codebase, improving maintainability
+                Designed and implemented email templates for follow-up and
+                successful purchase notifications.
               </li>
               <li className="list-disc">
-                Led the design and execution of end-to-end features,
-                guaranteeing optimal functionality
+                Implemented image uploading with cropping functionality to
+                maintain a 1:1 aspect ratio
               </li>
             </ul>
           </div>
