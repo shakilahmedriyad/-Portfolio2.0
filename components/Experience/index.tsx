@@ -78,7 +78,7 @@ export default function Experience() {
       <p className="text-xl text-center sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-raleway font-bold  mb-32">
         Experience I have
       </p>
-      <VerticalTimeline>
+      <VerticalTimeline className=" overflow-hidden">
         <TimeLineElement date="2023-2024" icon={<ImbueIcon />}>
           <div className="text-sm">
             <h1 className="vertical-timeline-element-title text-xl font-raleway font-bold">
