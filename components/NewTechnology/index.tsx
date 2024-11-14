@@ -1,7 +1,16 @@
-import Image from "next/image";
+"use client";
 import TechnologyBox from "./TechnologyBox";
-
+import { useEffect, useRef } from "react";
+import { useAnimation, useInView } from "framer-motion";
 export default function NewTechNology() {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   const techs = [
     { logo: "/TechIcons/react.svg", label: "React.js" },
     { logo: "/TechIcons/nextjs-white.svg", label: "Next.js" },
@@ -25,9 +34,12 @@ export default function NewTechNology() {
         Technologies I work with
         <hr className="w-[60%] border-2  border-gradient  mt-5 mx-auto" />
       </p>
-      <div className="flex  gap-x-14 mt-12 flex-wrap w-auto mx-[3%] md:w-[43rem] justify-center gap-y-5">
+      <div
+        ref={ref}
+        className="flex  gap-x-14 mt-12 flex-wrap w-auto mx-[3%] md:w-[43rem] justify-center gap-y-5"
+      >
         {techs.map((item, index) => (
-          <TechnologyBox val={index / 10} key={item.label} {...item} />
+          <TechnologyBox controls={controls} key={item.label} {...item} />
         ))}
       </div>
     </div>

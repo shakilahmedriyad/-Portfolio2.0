@@ -1,28 +1,18 @@
 "use client";
 import Image from "next/image";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { AnimationControls, motion } from "framer-motion";
 
 export default function TechnologyBox({
   logo,
   label,
-  val,
+  controls,
 }: {
   logo: string;
   label: string;
-  val: number;
+  controls: AnimationControls;
 }) {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
   return (
     <motion.div
-      ref={ref}
       initial={{ x: -200, opacity: 0 }}
       animate={controls}
       variants={{
