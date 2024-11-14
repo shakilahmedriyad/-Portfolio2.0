@@ -23,6 +23,7 @@ export default function NewTechNology() {
     <div className="text-white text-center flex flex-col justify-center items-center bg-[#1A1A1A] shadow-2xl py-14 mt-10 sm:mt-24">
       <p className=" text-xl sm:text-3xl font-raleway font-bold bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500  ">
         Technologies I work with
+        <hr className="w-[60%] border-2  border-gradient  mt-5 mx-auto" />
       </p>
       <div className="flex  gap-x-14 mt-12 flex-wrap w-auto mx-[3%] md:w-[43rem] justify-center gap-y-5">
         {techs.map((item, index) => (

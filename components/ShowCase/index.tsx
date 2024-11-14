@@ -20,6 +20,7 @@ export default function ShowCase() {
     >
       <p className="text-xl font-raleway sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold mt-12 mb-12">
         Projects I worked on
+        <hr className="w-[60%] mx-auto border-2  border-gradient  mt-5 " />
       </p>
       <ProjectComponent
         image="/projects/tour-camp.png"

@@ -60,9 +60,10 @@ export default function Testimonials() {
   }, [inView, setActive]);
 
   return (
-    <section ref={ref} id="testimonials" className="mx-5">
-      <h3 className=" text-center font-raleway py-20 text-xl sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold ">
+    <section ref={ref} id="testimonials" className="mx-5 text-center">
+      <h3 className="  inline-block font-raleway py-20 text-xl sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold ">
         Testimonials I Get
+        <hr className="w-[60%] mx-auto border-2  border-gradient  mt-5 " />
       </h3>
 
       <div className=" columns-1 sm:columns-2 lg:columns-3 space-y-5   max-w-[80rem]  gap-8 mx-auto">

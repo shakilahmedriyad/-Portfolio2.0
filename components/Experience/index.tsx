@@ -73,12 +73,13 @@ export default function Experience() {
     <section
       ref={ref}
       id="experience"
-      className="mx-auto scroll-m-28 text-ce text-white  my-24 flex-col items-center"
+      className="mx-auto  scroll-m-28 text-center text-white  my-24 flex-col items-center"
     >
-      <p className="text-xl text-center sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-raleway font-bold  mb-32">
+      <p className="text-xl mx-auto inline-block text-center sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-raleway font-bold  mb-32">
         Experience I have
+        <hr className="w-[60%] mx-auto border-2  border-gradient  mt-5 " />
       </p>
-      <VerticalTimeline className=" overflow-hidden">
+      <VerticalTimeline className=" overflow-hidden text-left">
         <TimeLineElement date="2023-2024" icon={<ImbueIcon />}>
           <div className="text-sm">
             <h1 className="vertical-timeline-element-title text-xl font-raleway font-bold">

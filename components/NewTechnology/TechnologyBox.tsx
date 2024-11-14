@@ -23,13 +23,13 @@ export default function TechnologyBox({
   return (
     <motion.div
       ref={ref}
-      initial={{ y: 200, opacity: 0 }}
+      initial={{ x: -200, opacity: 0 }}
       animate={controls}
       variants={{
-        visible: { y: 0, opacity: 1 },
+        visible: { x: 0, opacity: 1 },
       }}
-      transition={{ duration: 0.2, delay: val }}
-      className="flex flex-col items-center"
+      transition={{ duration: 0.5 }}
+      className="flex my-1 flex-col items-center"
     >
       <Image
         src={logo}

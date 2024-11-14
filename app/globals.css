@@ -8,3 +8,10 @@
     background: #151515;
   }
 }
+
+.border-gradient {
+  border-image: linear-gradient(to right, #f9fafb 0%, #d1d5db 50%, #6b7280 100%)
+    1;
+  border-width: 3px;
+  border-style: solid;
+}
