@@ -1,9 +1,11 @@
 "use client";
 import TestimonialsCard from "./TestimonialsCard";
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useActiveHooks } from "@/hooks/useActiveHooks";
+import { useInView } from "react-intersection-observer";
 const reviews = [
   {
     descriptions:
@@ -44,6 +46,14 @@ const reviews = [
 ];
 
 export default function Testimonials() {
+  const [ref, inView] = useInView({ threshold: 0.2 });
+  const { setActive } = useActiveHooks();
+  useEffect(() => {
+    if (inView) {
+      setActive("Testimonials");
+    }
+  }, [inView, setActive]);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -70,8 +80,9 @@ export default function Testimonials() {
 
   return (
     <section
+      ref={ref}
       id="testimonials"
-      className=" max-w-[90rem] overflow-hidden mx-auto text-center"
+      className=" max-w-[90rem] my-36 overflow-hidden mx-auto text-center"
     >
       <h3 className="  inline-block font-raleway py-20 text-xl sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold ">
         Testimonials I Get
