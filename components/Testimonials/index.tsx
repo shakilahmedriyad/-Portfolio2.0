@@ -1,9 +1,9 @@
 "use client";
-import { useInView } from "react-intersection-observer";
 import TestimonialsCard from "./TestimonialsCard";
-import { useActiveHooks } from "@/hooks/useActiveHooks";
-import { useEffect } from "react";
-
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const reviews = [
   {
     descriptions:
@@ -22,21 +22,14 @@ const reviews = [
   },
   {
     descriptions:
-      "I can't say enough positive things about our experience working with Riyad on Upwork. From the moment we started our project together, it was evident that he was the developer we'd been searching for. Riyad is not only a highly skilled professional, but his dedication to customer satisfaction is truly exceptional.\n\nRiyad was tasked with solving some pressing front-end issues we'd been facing for quite some time. Not only did he tackle the problems head-on, but he resolved them at lightning speed. His quick and efficient work allowed us to keep moving forward with our project, without any costly delays",
+      "I can't say enough positive things about our experience working with Riyad on Upwork. From the moment we started our project together, it was evident that he was the developer we'd been searching for. Riyad is not only a highly skilled professional, but his dedication to customer satisfaction is truly exceptional.",
     name: "Nelson Vercher",
     platform: "Upwork",
     ratings: "⭐⭐⭐⭐⭐",
   },
   {
     descriptions:
-      "Shakil is just a top notch frontender. Was a pleasure working with him, I would recommend!",
-    name: "Antonio Dal Cin",
-    platform: "Upwork",
-    ratings: "⭐⭐⭐⭐⭐",
-  },
-  {
-    descriptions:
-      "Great work Shakil, he is a very competent fast and precise frontender. Was a pleasure work with him!",
+      "Great work, Shakil it's a very competent fast and precise frontender. Was a pleasure work with him! Shakil is just a top notch frontender. Was a pleasure working with him, I would recommend!",
     name: "Antonio Dal Cin",
     platform: "Upwork",
     ratings: "⭐⭐⭐⭐⭐",
@@ -51,28 +44,45 @@ const reviews = [
 ];
 
 export default function Testimonials() {
-  const [ref, inView] = useInView({ threshold: 0.4 });
-  const { setActive } = useActiveHooks();
-  useEffect(() => {
-    if (inView) {
-      setActive("Testimonials");
-    }
-  }, [inView, setActive]);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 760,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   return (
-    <section ref={ref} id="testimonials" className="mx-5 text-center">
+    <section
+      id="testimonials"
+      className=" max-w-[90rem] overflow-hidden mx-auto text-center"
+    >
       <h3 className="  inline-block font-raleway py-20 text-xl sm:text-3xl bg-gradient-to-tr  text-transparent bg-clip-text from-gray-50 via-gray-300 to-gray-500 font-bold ">
         Testimonials I Get
         <hr className="w-[60%] mx-auto border-2  border-gradient  mt-5 " />
       </h3>
 
-      <div className=" columns-1 sm:columns-2 lg:columns-3 space-y-5   max-w-[80rem]  gap-8 mx-auto">
-        <TestimonialsCard del={0} {...reviews[2]} />
-        <TestimonialsCard del={0.3} {...reviews[0]} />
-        <TestimonialsCard del={0.5} {...reviews[3]} />
-        <TestimonialsCard del={0.7} {...reviews[5]} />
-        <TestimonialsCard del={1} {...reviews[1]} />
-      </div>
+      <Slider {...settings}>
+        {reviews.map((item) => (
+          <TestimonialsCard key={item.name} {...item} />
+        ))}
+      </Slider>
     </section>
   );
 }

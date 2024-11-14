@@ -42,7 +42,7 @@ export default function Contacts() {
       });
 
       if (res.status === 200) {
-        toast.success("Email sent successfully");
+        toast.success("I will get back to you soon");
         emailRef.current.value = "";
         nameRef.current.value = "";
         messageRef.current.value = "";
